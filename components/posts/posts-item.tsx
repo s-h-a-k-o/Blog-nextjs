@@ -10,21 +10,22 @@ const PostsItem: FC<any> = ({ post }) => {
   });
 
   return (
-    <li className="mx-8 bg-slate-500 text-center shadow-2xl shadow-gray-900">
-      <Link href="/posts/detail">
-        <div className="">
-          <Image
-            src={post.image}
-            alt={post.title}
-            width={600} // ektesi gamosaxulebistvis archev zomas
-            height={300}
-            className="w-full" //tu zomas sheamcireb 'full' sheavsebs kontainers
-          />
-        </div>
+    <li className=" mx-8 overflow-hidden bg-slate-500 text-center shadow-2xl shadow-gray-900">
+      <Link href={`/posts/${post.slug}`}>
+        <Image
+          src={post.image}
+          alt={post.title}
+          width={600}
+          height={350}
+          priority
+          className="w-full"
+          // legacy-t importirebisas class-ebshi chawerili w da h ignorirdeba
+        />
+
         <div className="p-2 text-white">
           <h3 className="text-[26px]">{post.title}</h3>
           <time className="text-gray-300">{formattedDate}</time>
-          <p className="mt-4">{post.except}</p>
+          <p className="m-4">{post.except}</p>
         </div>
       </Link>
     </li>
@@ -32,3 +33,7 @@ const PostsItem: FC<any> = ({ post }) => {
 };
 
 export default PostsItem;
+
+//width={600} // ektesi gamosaxulebistvis archev zomas
+//height={300}
+//w-full max-h-[305px]
