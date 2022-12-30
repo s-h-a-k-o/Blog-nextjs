@@ -10,21 +10,23 @@ const PostsItem: FC<any> = ({ post }) => {
   });
 
   return (
-    <li className="mx-8 bg-slate-500 text-center shadow-2xl shadow-gray-900">
-      <Link href="/posts/detail">
-        <div className="">
+    <li className=" mx-8 overflow-hidden bg-slate-500 text-center shadow-2xl shadow-gray-900">
+      <Link href={`/posts/${post.slug}`}>
+        <div>
           <Image
             src={post.image}
             alt={post.title}
-            width={600} // ektesi gamosaxulebistvis archev zomas
-            height={300}
-            className="w-full" //tu zomas sheamcireb 'full' sheavsebs kontainers
+            width={700}
+            height={250}
+            priority
+            className="aspect-video"
           />
         </div>
+
         <div className="p-2 text-white">
           <h3 className="text-[26px]">{post.title}</h3>
           <time className="text-gray-300">{formattedDate}</time>
-          <p className="mt-4">{post.except}</p>
+          <p className="p-4">{post.except}</p>
         </div>
       </Link>
     </li>

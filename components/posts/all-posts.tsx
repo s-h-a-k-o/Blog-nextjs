@@ -17,5 +17,3 @@ const AllPosts: FC<any> = ({ allposts }) => {
 };
 
 export default AllPosts;
-
-//grid grid-cols-4 maxmd:grid-cols-1 md:grid-cols-2 ls:grid-cols-4 gap-[1.5rem]
