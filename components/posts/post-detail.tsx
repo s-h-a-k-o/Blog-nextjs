@@ -14,37 +14,43 @@ const DUMMY_POST = {
 };
 
 const PostDetail: FC<any> = ({ detail }) => {
-  // const router = useRouter();
-  // console.log(router);
+  const router = useRouter();
+  const query = router.query;
+  const slugProp = query.slug;
+  console.log(slugProp);
   return (
     <section className=" flex justify-center">
       <div
         className=" maxmd:w-[65%] bg-gray-500 max-w-[60rem] shadow-2xl shadow-gray-900
       rounded-[6px] mt-10"
       >
-        {/* {detail.map((post: any) => {
-          return (
-            <div key={post.slug}>
-              <header
-                className="md:flex justify-center items-center border-b-[6px] border-purple-300
-        mx-8 mt-6"
-              >
-                <h1 className="maxmd:text-[30px] text-[50px] text-purple-300 font-bold overflow-hidden">
-                  {post.title}
-                </h1>
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={250}
-                  height={250}
-                  className="maxmd:w-full mb-8 maxmd:mt-5"
-                />
-              </header>
-              <div className="p-8 text-white font-bold">{post.content}</div>
-            </div>
-          );
-        })} */}
-        <header
+        {detail.map((post: any) => {
+          console.log(post.slug);
+          if (slugProp === post.slug) {
+            return (
+              <div key={post.slug}>
+                <header
+                  className="md:flex justify-center items-center border-b-[6px] border-purple-300
+          mx-8 mt-6"
+                >
+                  <h1 className="maxmd:text-[30px] text-[50px] text-purple-300 font-bold overflow-hidden">
+                    {post.title}
+                  </h1>
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={300}
+                    height={200}
+                    priority
+                    className="maxmd:w-full mb-5 rounded-[10px] aspect-video md:ml-4"
+                  />
+                </header>
+                <div className="p-8 text-white text-[18px] font-bold">{post.except}</div>
+              </div>
+            );
+          }
+        })}
+        {/* <header
           className="md:flex justify-center items-center border-b-[6px] border-purple-300
         mx-8 mt-6"
         >
@@ -61,7 +67,7 @@ const PostDetail: FC<any> = ({ detail }) => {
             />
           </div>
         </header>
-        <div className="p-8 text-white font-bold">{DUMMY_POST.content}</div>
+        <div className="p-8 text-white font-bold">{DUMMY_POST.content}</div> */}
       </div>
     </section>
   );

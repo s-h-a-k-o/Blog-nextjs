@@ -19,9 +19,7 @@ const Hero: FC = () => {
       <h1 className="text-[40px] m-[1rem]">
         Hi, welcome to the frontend world
       </h1>
-      <p className="text-[20px]">
-        Blog about web development - especially frontend framework like React
-      </p>
+      <p className="text-[25px]">Blog about web development</p>
     </section>
   );
 };

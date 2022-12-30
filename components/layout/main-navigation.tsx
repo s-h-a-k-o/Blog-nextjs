@@ -11,7 +11,7 @@ const MainNavigation: FC = () => {
         className="hover:text-gray-300 active:text-gray-300 text-[20px] 
         md:text-[30px] font-bold ml-10"
       >
-        <Link href="/">NEXT BLOG</Link>
+        <Link href="/">FRONTEND BLOG</Link>
       </div>
       <nav className="mr-10">
         <ul className="flex m-0 p-0 text-[14px] md:text-[19px]">
