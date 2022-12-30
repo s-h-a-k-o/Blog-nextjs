@@ -45,29 +45,13 @@ const PostDetail: FC<any> = ({ detail }) => {
                     className="maxmd:w-full mb-5 rounded-[10px] aspect-video md:ml-4"
                   />
                 </header>
-                <div className="p-8 text-white text-[18px] font-bold">{post.except}</div>
+                <div className="p-8 text-white text-[18px] font-bold">
+                  {post.except}
+                </div>
               </div>
             );
           }
         })}
-        {/* <header
-          className="md:flex justify-center items-center border-b-[6px] border-purple-300
-        mx-8 mt-6"
-        >
-          <h1 className="maxmd:text-[30px] text-[50px] text-purple-300 font-bold overflow-hidden">
-            {DUMMY_POST.title}
-          </h1>
-          <div>
-            <Image
-              src={DUMMY_POST.image}
-              alt={DUMMY_POST.title}
-              width={300}
-              height={200}
-              className="w-full mb-5 rounded-[10px]"
-            />
-          </div>
-        </header>
-        <div className="p-8 text-white font-bold">{DUMMY_POST.content}</div> */}
       </div>
     </section>
   );

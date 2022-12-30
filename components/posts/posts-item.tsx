@@ -26,7 +26,7 @@ const PostsItem: FC<any> = ({ post }) => {
         <div className="p-2 text-white">
           <h3 className="text-[26px]">{post.title}</h3>
           <time className="text-gray-300">{formattedDate}</time>
-          <p className="p-4">{post.except}</p>
+          <p className="p-4 text-[18px]">{post.except}</p>
         </div>
       </Link>
     </li>
