@@ -37,7 +37,7 @@ const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
               </div>
               <div className="p-2">
                 <h4 className="mb-2 italic text-blue-500">{item.email}.</h4>
-                <p className="maxmd:text-center">{item.message}</p>
+                <p className="">{item.message}</p>
               </div>
             </div>
             <div className="grid grid-rows gap-3 md:grid md:grid-cols-2 ">
