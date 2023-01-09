@@ -4,22 +4,25 @@ import { FC } from "react";
 const Hero: FC = () => {
   return (
     <section
-      className="flex flex-col justify-center items-center text-sky-100 bg-gradient-to-b from-sky-600 to-indigo-500
-    p-[2rem]"
+      className="w-full flex flex-col justify-center items-center text-sky-100 bg-gradient-to-b from-sky-600 to-indigo-500
+    p-[2rem] overflow-hidden"
     >
-      <div className="rounded-[50%] shadow-2xl shadow-gray-900 overflow-hidden">
+      <div className="min-w-[200px] rounded-[10px] shadow-2xl shadow-gray-900 overflow-hidden">
         <Image
-          src="/images/site/119056.jpg"
+          src="/images/site/frontend.jpg"
           alt="mafia logo"
-          width={250}
-          height={250}
-          className="rounded-[50%]"
+          width={500}
+          height={350}
+          priority
+          className=""
         />
       </div>
-      <h1 className="text-[40px] m-[1rem]">
+      <h1 className="maxmd:text-[30px] maxmd:text-center text-[40px] m-[1rem] overflow-hidden">
         Hi, welcome to the frontend world
       </h1>
-      <p className="text-[25px]">Blog about web development</p>
+      <p className="maxmd:text-[20px] text-center md:text-[25px] overflow-hidden">
+        Blog about web development
+      </p>
     </section>
   );
 };

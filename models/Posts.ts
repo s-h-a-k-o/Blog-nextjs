@@ -5,3 +5,10 @@ export interface PostsModel {
   except: string;
   date: string;
 }
+
+export interface FormModel {
+  _id: string;
+  email: string;
+  name: string;
+  message: string | number;
+}

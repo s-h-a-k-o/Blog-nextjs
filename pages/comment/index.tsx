@@ -1,11 +1,8 @@
 import { NextPage } from "next";
+import CommentForm from "../../components/contact/comment-form";
 
 const ContactPage: NextPage = () => {
-  return (
-    <div>
-      <h2 className="text-[72px]">Contact Page</h2>
-    </div>
-  );
+  return <CommentForm />
 };
 
 export default ContactPage;
