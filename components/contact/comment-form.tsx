@@ -37,7 +37,7 @@ const CommentForm: FC = () => {
       return;
     }
 
-    await fetch(
+    const response = await fetch(
       "https://store-form-input-default-rtdb.firebaseio.com/formInput.json",
       {
         method: "POST",
@@ -47,6 +47,9 @@ const CommentForm: FC = () => {
         },
       }
     );
+    if (!response.ok) {
+      throw new Error("Something went wrong!");
+    }
 
     setSeeComment(true);
   };
@@ -55,7 +58,7 @@ const CommentForm: FC = () => {
     <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)] pt-[9%]  overflow-auto">
       <div
         className="maxmd:w-[70%] md:w-[40%] md:min-w-[500px]  bg-slate-300 m-auto shadow-2xl shadow-gray-900
-    py-5 rounded-lg h-auto min-w-[300px]"
+    py-5 rounded-lg min-w-[300px]"
       >
         <h1 className="text-center font-bold maxmd:text-[20px] text-[35px] p-[20px]">
           Send your comment
@@ -118,16 +121,18 @@ const CommentForm: FC = () => {
             </button>
           </div>
         </form>
-        {!seeComment && <div className="inline-block maxmd:mx-3 mx-7 mt-10 text-[13px]">
-          <Link href="/your-comment">
-            <button
-              className="bg-gray-500 font-bold rounded-[5px] maxmd:p-1 maxmd:px-0  p-2 px-4 text-white block m-auto 
+        {!seeComment && (
+          <div className="inline-block maxmd:mx-3 mx-7 mt-10 text-[13px]">
+            <Link href="/your-comment">
+              <button
+                className="bg-gray-500 font-bold rounded-[5px] maxmd:p-1 maxmd:px-0  p-2 px-4 text-white block m-auto 
                  overflow-hidden text-center maxmd:w-[90%] md:[80%] hover:bg-slate-600 active:bg-slate-400 active:text-black"
-            >
-              Go to the comments page
-            </button>
-          </Link>
-        </div>}
+              >
+                Go to the comments page
+              </button>
+            </Link>
+          </div>
+        )}
         {seeComment && (
           <div className="bg-gray-400 w-[50%] rounded-lg p-5 mt-4 m-auto overflow-hidden">
             <h3 className="text-[20px] text-center mb-3 font-bold">

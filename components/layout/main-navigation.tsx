@@ -43,7 +43,7 @@ const MainNavigation: FC = () => {
           </ul>
         </nav>
         <div
-          className={`md:hidden maxmd:mr-5 w-[60px] h-[60px] bg-gray-800 cursor-pointer rounded-[50%] flex flex-col justify-center items-center px-[12px]`}
+          className="md:hidden mr-5 w-[50px] h-[50px] hover:bg-slate-900 bg-slate-800 cursor-pointer rounded-[50%] flex flex-col justify-center items-center px-[12px]"
           onClick={switchMenuHandler}
         >
           <div className="bg-white h-[1px] w-full my-[4px]"></div>
