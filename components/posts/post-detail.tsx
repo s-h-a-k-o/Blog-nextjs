@@ -10,7 +10,7 @@ const PostDetail: FC<any> = ({ detail }) => {
   return (
     <section className=" flex justify-center pt-[9%] min-w-[250px] overflow-hidden">
       <div
-        className="  maxmd:w-[65%] md:mx-10 lg:mx-0 bg-gray-500 max-w-[60rem] shadow-2xl shadow-gray-900
+        className="  maxmd:w-[65%] md:mx-10 lg:mx-0 bg-slate-500 max-w-[60rem] shadow-2xl shadow-gray-900
       rounded-[6px] mt-10"
       >
         {detail.map((post: any) => {
@@ -28,9 +28,9 @@ const PostDetail: FC<any> = ({ detail }) => {
                     src={post.image}
                     alt={post.title}
                     width={300}
-                    height={200}
+                    height={300}
                     priority
-                    className="maxmd:w-full mb-5 rounded-[10px] aspect-video "
+                    className="maxmd:w-full mb-5 rounded-[10px] aspect-video"
                   />
                 </header>
                 <div className="p-8 text-white text-[18px] font-bold overflow-hidden">
