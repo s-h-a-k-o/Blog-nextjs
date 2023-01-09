@@ -58,7 +58,7 @@ const CommentForm: FC = () => {
   };
 
   return (
-    <div className=" bg-slate-500 min-w-full min-h-[calc(100vh-6rem)] pt-[9%]  overflow-hidden">
+    <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)] pt-[9%]  overflow-hidden">
       <div
         className="maxmd:w-[70%] md:w-[40%] md:min-w-[500px]  bg-slate-300 m-auto shadow-2xl shadow-gray-900
     py-5 rounded-lg min-w-[250px]"

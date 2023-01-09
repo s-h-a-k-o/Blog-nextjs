@@ -9,7 +9,7 @@ interface PropsType {
 
 const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
   return (
-    <section className=" min-w-full bg-slate-500 min-h-[calc(100vh-97px)] overflow-hidden">
+    <section className="w-full bg-slate-500 min-h-[calc(100vh-96px)] overflow-hidden">
       <h2 className="text-[30px] text-white text-center font-bold mt-[15px]">
         Comments
       </h2>
@@ -37,7 +37,7 @@ const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
               </div>
               <div className="p-2">
                 <h4 className="mb-2 italic text-blue-500">{item.email}.</h4>
-                <p className="text-justify ">{item.message}</p>
+                <p className="maxmd:text-center">{item.message}</p>
               </div>
             </div>
             <div className="grid grid-rows gap-3 md:grid md:grid-cols-2 ">

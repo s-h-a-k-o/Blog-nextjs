@@ -20,7 +20,7 @@ const MainNavigation: FC = () => {
     <section className="">
       <header
         className="text-white h-[6rem] flex justify-between items-center
-  bg-gray-600 font-sans overflow-hidden"
+  bg-gray-600 font-sans overflow-hidden w-full"
       >
         <div
           className="hover:text-gray-300 active:text-gray-300 text-[20px] 
