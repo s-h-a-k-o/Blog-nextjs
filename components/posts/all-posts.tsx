@@ -3,7 +3,7 @@ import PostsItem from "./posts-item";
 
 const AllPosts: FC<any> = ({ allposts }) => {
   return (
-    <div className="">
+    <div className=" bg-gray-900 w-full h-full overflow-hidden">
       <h2 className="text-[30px] md:text-[50px] p-8 text-gray-300 font-bold text-center">
         Get Into Programming
       </h2>

@@ -3,7 +3,7 @@ import PostsItem from "../posts/posts-item";
 
 const FeaturedPosts: FC<any> = ({ posts }) => {
   return (
-    <section className="w-full  overflow-hidden">
+    <section className="w-full h-full bg-slate-900 overflow-hidden">
       <h1 className="md:text-[50px] maxmd:text-[200%] p-8 text-gray-300 font-bold text-center overflow-hidden">
         Three Main Languages
       </h1>
