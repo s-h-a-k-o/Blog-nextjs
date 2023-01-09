@@ -3,17 +3,17 @@ import PostsItem from "../posts/posts-item";
 
 const FeaturedPosts: FC<any> = ({ posts }) => {
   return (
-    <section className="">
-      <h1 className="text-[50px] p-8 text-gray-900 font-bold text-center">
-        Featured Posts
+    <section className="w-full  overflow-hidden">
+      <h1 className="md:text-[50px] maxmd:text-[200%] p-8 text-gray-300 font-bold text-center overflow-hidden">
+        Three Main Languages
       </h1>
       <ul
-        className="mb-5 grid grid-cols-4 maxmd:grid-cols-1 md:grid-cols-2 ls:grid-cols-4 gap-[1.5rem]  list-none
-      overflow-hidden"
+        className=" mb-8 grid maxmd:grid-cols-1 md:grid-cols-2 ls:grid-cols-3 gap-[1.5rem]  list-none
+       p-5 px-8 overflow-hidden"
       >
-        {posts.map((post: any) => (
-          <PostsItem key={post.slug} post={post} />
-        ))}
+        {posts.slice(0, 3).map((post: any) => {
+          return <PostsItem key={post.slug} post={post} />;
+        })}
       </ul>
     </section>
   );

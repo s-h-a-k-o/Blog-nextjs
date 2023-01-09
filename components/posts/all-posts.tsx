@@ -3,11 +3,14 @@ import PostsItem from "./posts-item";
 
 const AllPosts: FC<any> = ({ allposts }) => {
   return (
-    <div>
-      <h2 className="text-[50px] p-8 text-gray-900 font-bold text-center">
-        All Posts Page
+    <div className="">
+      <h2 className="text-[30px] md:text-[50px] p-8 text-gray-300 font-bold text-center">
+        Get Into Programming
       </h2>
-      <ul className="grid ls:grid-cols-3 maxmd:grid-cols-1 md:grid-cols-2 gap-[2rem] gap-y-[100px] mb-12 list-none">
+      <ul
+        className="grid ls:grid-cols-3 maxmd:grid-cols-1 md:grid-cols-2 gap-[2rem] gap-y-[100px] mb-12 list-none
+        maxmd:h-[70%] px-5"
+      >
         {allposts.map((post: any) => (
           <PostsItem key={post.slug} post={post} />
         ))}
