@@ -1,8 +1,21 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/post-detail";
 
 const SinglePostPage: NextPage<any> = ({ postDetail }) => {
-  return <PostDetail detail={postDetail} />;
+  console.log(postDetail);
+  const router = useRouter();
+  console.log(router);
+  return (
+    <>
+      <Head>
+        <title>{router.query.slug}</title>
+        <meta />
+      </Head>
+      <PostDetail detail={postDetail} />;
+    </>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import YourMessage from "../../components/contact/comment";
 import { FormModel } from "../../models/Posts";
@@ -30,7 +31,15 @@ const MessagesPage: NextPage<FormType> = ({ message }) => {
     }
   };
 
-  return <YourMessage message={data} deleteComment={deleteComment} />;
+  return (
+    <>
+      <Head>
+        <title>your Comment</title>
+        <meta name="description" content="add your comment about frontend" />
+      </Head>
+      <YourMessage message={data} deleteComment={deleteComment} />;
+    </>
+  );
 };
 
 export default MessagesPage;
@@ -41,15 +50,15 @@ export const getStaticProps: GetStaticProps = async () => {
   );
   const data = await res.json();
 
-  const postsData = [];
+  const commentData = [];
 
   for (const key in data) {
-    postsData.push({
+    commentData.push({
       _id: key,
       ...data[key],
     });
   }
   return {
-    props: { message: postsData },
+    props: { message: commentData },
   };
 };

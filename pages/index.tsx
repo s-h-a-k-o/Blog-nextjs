@@ -1,13 +1,18 @@
 import { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import Hero from "../components/home-page/hero";
 
 const HomePage: NextPage<any> = ({ featuredPosts }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Frontend Blog</title>
+        <meta name="description" content="Blog about frontend development" />
+      </Head>
       <Hero />
       <FeaturedPosts posts={featuredPosts} />
-    </div>
+    </>
   );
 };
 

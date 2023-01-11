@@ -2,8 +2,50 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, useState, useEffect } from "react";
 
+interface WinSizeType {
+  winWidth: number | undefined;
+  winHeight: number | undefined;
+}
+
 const MainNavigation: FC = () => {
   const [showMenu, setShowMenu] = useState<Boolean>(false);
+
+  let windowWidth: number | undefined;
+  let winHeight: number | undefined;
+  if (typeof window !== "undefined") {
+    windowWidth = window.innerWidth;
+    winHeight = window.innerHeight;
+  } else {
+    console.log("error");
+  }
+
+  const [winSize, setWinSize] = useState<WinSizeType>({
+    winWidth: windowWidth,
+    winHeight: winHeight,
+  });
+
+  const changeSize = () => {
+    setWinSize({
+      winWidth: window.innerWidth,
+      winHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", changeSize);
+
+    if (winSize.winWidth >= 768) {
+      setShowMenu(false);
+    }
+
+    // if (winSize.winWidth < 768) {
+    //   setShowMenu(false);
+    // }
+
+    return () => {
+      window.removeEventListener("resize", changeSize);
+    };
+  }, [winSize]);
 
   const switchMenuHandler = () => {
     setShowMenu((prev) => !prev);
@@ -17,9 +59,9 @@ const MainNavigation: FC = () => {
   }, [path]);
 
   return (
-    <section className="">
+    <section>
       <header
-        className="text-white h-[6rem] flex justify-between items-center
+        className=" text-white h-[6rem] flex justify-between items-center
   bg-gray-600 font-sans overflow-hidden w-full"
       >
         <div

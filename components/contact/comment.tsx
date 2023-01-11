@@ -9,8 +9,8 @@ interface PropsType {
 
 const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
   return (
-    <section className="w-full bg-slate-500 min-h-[calc(100vh-96px)] overflow-hidden">
-      <h2 className="text-[30px] text-white text-center font-bold mt-[15px]">
+    <section className="w-full bg-slate-500 h-[calc(100vh-96px)]">
+      <h2 className="text-[30px] text-white text-center font-bold pt-[15px]">
         Comments
       </h2>
       {message.length === 0 && (

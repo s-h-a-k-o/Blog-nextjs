@@ -1,8 +1,17 @@
 import { NextPage, GetStaticProps } from "next";
+import Head from "next/head";
 import AllPosts from "../../components/posts/all-posts";
 
 const AllPostsPage: NextPage<any> = ({ allPosts }) => {
-  return <AllPosts allposts={allPosts} />;
+  return (
+    <>
+      <Head>
+        <title>Frontend Languages</title>
+        <meta name="description" content="Frontend Languages" />
+      </Head>
+      <AllPosts allposts={allPosts} />;
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -58,9 +58,12 @@ const CommentForm: FC = () => {
   };
 
   return (
-    <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)] pt-[9%]  overflow-hidden">
+    <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)]   overflow-hidden">
+      <h2 className="text-[30px] font-bold text-sky-100 text-center mt-[20px]">
+        Tell us what you think about Frontend
+      </h2>
       <div
-        className="maxmd:w-[70%] md:w-[40%] md:min-w-[500px]  bg-slate-300 m-auto shadow-2xl shadow-gray-900
+        className="mt-[6%] maxmd:w-[70%] md:w-[40%] md:min-w-[500px]  bg-slate-300 m-auto shadow-2xl shadow-gray-900
     py-5 rounded-lg min-w-[250px]"
       >
         <h1 className="text-center font-bold maxmd:text-[20px] text-[35px] p-[20px]">
@@ -131,7 +134,7 @@ const CommentForm: FC = () => {
                 className="bg-gray-500 font-bold rounded-[5px] maxmd:p-1 maxmd:px-0  p-2 px-4 text-white block m-auto 
                  overflow-hidden text-center maxmd:w-[90%] md:[80%] hover:bg-slate-600 active:bg-slate-400 active:text-black"
               >
-                Go to the comments page
+                Go and see your comment
               </button>
             </Link>
           </div>

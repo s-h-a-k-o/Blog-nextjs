@@ -4,7 +4,7 @@ import { FC } from "react";
 const Hero: FC = () => {
   return (
     <section
-      className="w-full h-full flex flex-col justify-center items-center text-sky-100 bg-gradient-to-b from-sky-600 to-indigo-500
+      className="w-full flex flex-col justify-center items-center text-sky-100 bg-gradient-to-b from-sky-600 to-indigo-500
     p-[2rem] overflow-hidden"
     >
       <div className="rounded-[10px] shadow-2xl shadow-gray-900 overflow-hidden">
