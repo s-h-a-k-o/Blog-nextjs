@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
-import CommentForm from "../../components/contact/comment-form";
+import CommentForm from "../../components/comment/comment-form";
 
 const ComemntPage: NextPage = () => {
   return (

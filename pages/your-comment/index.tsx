@@ -1,8 +1,8 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import YourComment from "../../components/contact/comment";
-import YourMessage from "../../components/contact/comment";
+import YourComment from "../../components/comment/comment";
+import YourMessage from "../../components/comment/comment";
 import { FormModel } from "../../models/Posts";
 
 interface FormType {

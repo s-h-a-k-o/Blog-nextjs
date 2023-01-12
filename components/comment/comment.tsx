@@ -14,8 +14,8 @@ const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
         Comments
       </h2>
       {message.length !== 0 && (
-        <h2 className="text-end text-white pr-5 text-[20px] ">
-          <span className="hover:text-sky-200">
+        <h2 className="maxmd:ml-5 md:text-end text-white md:pr-10 text-[20px] my-5">
+          <span className="hover:text-sky-300">
             {" "}
             <Link href="/comment">add new comment </Link>
           </span>
