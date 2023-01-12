@@ -1,6 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import YourComment from "../../components/contact/comment";
 import YourMessage from "../../components/contact/comment";
 import { FormModel } from "../../models/Posts";
 
@@ -37,7 +38,7 @@ const MessagesPage: NextPage<FormType> = ({ message }) => {
         <title>your Comment</title>
         <meta name="description" content="add your comment about frontend" />
       </Head>
-      <YourMessage message={data} deleteComment={deleteComment} />;
+      <YourComment message={data} deleteComment={deleteComment} />
     </>
   );
 };

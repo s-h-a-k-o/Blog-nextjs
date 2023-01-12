@@ -10,7 +10,7 @@ const Layout: FC<ChildrenType> = ({ children }) => {
   return (
     <>
       <MainNavigation />
-      <main className="h-[calc(100vh-96px)] ">{children}</main>
+      <main className="min-h-[calc(100vh-96px)] ">{children}</main>
     </>
   );
 };

@@ -9,7 +9,7 @@ const AllPostsPage: NextPage<any> = ({ allPosts }) => {
         <title>Frontend Languages</title>
         <meta name="description" content="Frontend Languages" />
       </Head>
-      <AllPosts allposts={allPosts} />;
+      <AllPosts allposts={allPosts} />
     </>
   );
 };

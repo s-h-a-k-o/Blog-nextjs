@@ -9,7 +9,7 @@ const ComemntPage: NextPage = () => {
         <title>add comment</title>
         <meta name="description" content="add your comment about frontend " />
       </Head>
-      <CommentForm />;
+      <CommentForm />
     </>
   );
 };

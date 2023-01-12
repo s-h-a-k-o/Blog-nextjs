@@ -3,17 +3,23 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/post-detail";
 
-const SinglePostPage: NextPage<any> = ({ postDetail }) => {
-  console.log(postDetail);
+const SinglePostPage: NextPage<any> = ({ posts }) => {
   const router = useRouter();
-  console.log(router);
+  const query = router.query;
+  const slugProp = query.slug;
+
+  const post = posts.find((item: any) => item.slug === slugProp);
+  if (!post) {
+    return null;
+  }
+
   return (
     <>
       <Head>
-        <title>{router.query.slug}</title>
-        <meta />
+        <title>{post.title}</title>
+        <meta name="description" content={post.Description} />
       </Head>
-      <PostDetail detail={postDetail} />;
+      <PostDetail post={post} />
     </>
   );
 };
@@ -59,7 +65,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
   return {
     props: {
-      postDetail: postsData,
+      posts: postsData,
     },
   };
 };

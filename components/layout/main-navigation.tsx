@@ -34,13 +34,9 @@ const MainNavigation: FC = () => {
   useEffect(() => {
     window.addEventListener("resize", changeSize);
 
-    if (winSize.winWidth >= 768) {
+    if (winSize.winWidth || 0 >= 768) {
       setShowMenu(false);
     }
-
-    // if (winSize.winWidth < 768) {
-    //   setShowMenu(false);
-    // }
 
     return () => {
       window.removeEventListener("resize", changeSize);
