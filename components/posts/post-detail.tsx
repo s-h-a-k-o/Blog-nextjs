@@ -3,8 +3,8 @@ import { FC } from "react";
 
 const PostDetail: FC<any> = ({ post }) => {
   return (
-    <div className="w-full h-full bg-slate-900 pt-[10%] maxmd:pb-5">
-      <div className=" flex justify-center  overflow-hidden">
+    <div className="w-full min-h-[calc(100vh-96px)] bg-slate-900 pt-[10%] maxmd:pb-5">
+      <div className="flex justify-center overflow-hidden">
         <div
           className="maxmd:w-[65%] md:mx-10 lg:mx-0 bg-slate-500 max-w-[60rem] shadow-2xl shadow-gray-900
     rounded-[6px]"

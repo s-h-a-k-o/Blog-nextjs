@@ -58,8 +58,8 @@ const CommentForm: FC = () => {
   };
 
   return (
-    <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)]   overflow-hidden">
-      <h2 className="text-[30px] font-bold text-sky-100 text-center mt-[20px]">
+    <div className=" bg-slate-500 w-full min-h-[calc(100vh-6rem)] overflow-hidden">
+      <h2 className="text-[30px] font-bold text-slate-100 text-center mt-[20px]">
         Tell us what you think about Frontend
       </h2>
       <div

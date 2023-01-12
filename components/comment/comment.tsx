@@ -9,7 +9,7 @@ interface PropsType {
 
 const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
   return (
-    <section className="w-full bg-slate-800  min-h-[calc(100vh-96px)]">
+    <section className="w-full bg-slate-700 min-h-[calc(100vh-96px)]">
       <h2 className="text-[30px] text-white text-center font-bold pt-[15px]">
         Comments
       </h2>
@@ -33,7 +33,7 @@ const YourComment: FC<PropsType> = ({ message, deleteComment }) => {
       )}
       <div className=" md:w-[65%] maxmd:mx-3 m-auto rounded-md flex flex-col justify-center items-center">
         {message.map((item, index) => (
-          <div key={item._id} className="bg-slate-300 p-3 w-[70%] rounded-md mb-10 maxmd:px-5">
+          <div key={item._id} className="bg-slate-300 p-3 w-[70%] rounded-[8px] mb-10 maxmd:px-5 shadow-2xl shadow-gray-900">
             <div className="text-black lg:flex rounded-lg">
               <div className="md:min-w-[120px] max-w-[120px] p-2 pl-3 font-bold">
                 {item.name}
