@@ -2,8 +2,13 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/post-detail";
+import { PostsModel } from "../../models/Posts";
 
-const SinglePostPage: NextPage<any> = ({ posts }) => {
+interface SinglePostType {
+  posts: PostsModel[];
+}
+
+const SinglePostPage: NextPage<SinglePostType> = ({ posts }) => {
   const router = useRouter();
   const query = router.query;
   const slugProp = query.slug;

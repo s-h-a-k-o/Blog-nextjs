@@ -1,8 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { PostsModel } from "../../models/Posts";
 
-const PostsItem: FC<any> = ({ post }) => {
+interface PostItemType {
+  post: PostsModel;
+}
+
+const PostsItem: FC<PostItemType> = ({ post }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",

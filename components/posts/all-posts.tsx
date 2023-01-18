@@ -1,7 +1,12 @@
 import { FC } from "react";
+import { PostsModel } from "../../models/Posts";
 import PostsItem from "./posts-item";
 
-const AllPosts: FC<any> = ({ allposts }) => {
+interface AllPostsType {
+  allposts: PostsModel[];
+}
+
+const AllPosts: FC<AllPostsType> = ({ allposts }) => {
   return (
     <div className="w-full bg-gray-900 overflow-hidden min-h-[calc(100vh-96px)] px-5">
       <h2 className="text-[30px] md:text-[50px] p-8 text-gray-300 font-bold text-center">

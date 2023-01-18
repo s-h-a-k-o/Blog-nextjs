@@ -2,8 +2,14 @@ import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import FeaturedPosts from "../components/home-page/featured-posts";
 import Hero from "../components/home-page/hero";
+import axios from "axios";
+import { PostsModel } from "../models/Posts";
 
-const HomePage: NextPage<any> = ({ featuredPosts }) => {
+interface PostsType {
+  featuredPosts: PostsModel[];
+}
+
+const HomePage: NextPage<PostsType> = ({ featuredPosts }) => {
   return (
     <>
       <Head>
@@ -17,11 +23,11 @@ const HomePage: NextPage<any> = ({ featuredPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(
+  const res = await axios.get(
     "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
   );
-  const data = await res.json(); // firebase-dan migebuli data aris obieqti da ara array amitom =>
-  const postsData = []; // <==
+  const data = await res.data; // firebase-dan migebuli data aris obieqti da ara array amitom =>
+  const postsData = []; // ==> davpushot postData array-shi
 
   for (const key in data) {
     postsData.push({

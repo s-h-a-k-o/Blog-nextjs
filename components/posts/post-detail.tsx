@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { FC } from "react";
+import { PostsModel } from "../../models/Posts";
 
-const PostDetail: FC<any> = ({ post }) => {
+interface PostDetailType {
+  post: PostsModel; //post ukve objectia da ara array
+}
+
+const PostDetail: FC<PostDetailType> = ({ post }) => {
   return (
     <div className="w-full min-h-[calc(100vh-96px)] bg-slate-900 pt-[10%] maxmd:pb-5">
       <div className="flex justify-center overflow-hidden">

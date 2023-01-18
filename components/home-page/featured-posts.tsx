@@ -1,7 +1,12 @@
 import { FC } from "react";
+import { PostsModel } from "../../models/Posts";
 import PostsItem from "../posts/posts-item";
 
-const FeaturedPosts: FC<any> = ({ posts }) => {
+interface FeaturedPostsType {
+  posts: PostsModel[];
+}
+
+const FeaturedPosts: FC<FeaturedPostsType> = ({ posts }) => {
   return (
     <section className="w-full bg-slate-900 pb-10">
       <h1 className="md:text-[50px] maxmd:text-[200%] p-8 text-gray-300 font-bold text-center overflow-hidden">
