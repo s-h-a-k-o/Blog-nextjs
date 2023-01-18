@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, FormEvent, useRef, useState } from "react";
+import axios from "axios";
 
 const CommentForm: FC = () => {
   const inputEmailRef = useRef<HTMLInputElement | null>(null);
@@ -37,19 +38,10 @@ const CommentForm: FC = () => {
       return;
     }
     try {
-      const response = await fetch(
+      await axios.post(
         "https://store-form-input-default-rtdb.firebaseio.com/formInput.json",
-        {
-          method: "POST",
-          body: JSON.stringify(inputBody),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+        inputBody
       );
-      if (!response.ok) {
-        throw new Error("Something went wrong!");
-      }
 
       setSeeComment(true);
     } catch (error) {

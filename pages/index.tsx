@@ -23,24 +23,32 @@ const HomePage: NextPage<PostsType> = ({ featuredPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await axios.get(
-    "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
-  );
-  const data = await res.data; // firebase-dan migebuli data aris obieqti da ara array amitom =>
-  const postsData = []; // ==> davpushot postData array-shi
+  try {
+    const res = await axios.get(
+      "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
+    );
+    const data = res.data; // firebase-dan migebuli data aris obieqti da ara array amitom =>
+    const postsData = []; // ==> davpushot postData array-shi
 
-  for (const key in data) {
-    postsData.push({
-      slug: key,
-      ...data[key],
-    });
+    for (const key in data) {
+      postsData.push({
+        slug: key,
+        ...data[key],
+      });
+    }
+    return {
+      props: {
+        featuredPosts: postsData,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        featuredPosts: [],
+      },
+    };
   }
-
-  return {
-    props: {
-      featuredPosts: postsData,
-    },
-  };
 };
 
 export default HomePage;

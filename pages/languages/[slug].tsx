@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import PostDetail from "../../components/posts/post-detail";
 import { PostsModel } from "../../models/Posts";
+import axios from "axios";
 
 interface SinglePostType {
   posts: PostsModel[];
@@ -30,10 +31,10 @@ const SinglePostPage: NextPage<SinglePostType> = ({ posts }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
+  const res = await axios.get(
     "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
   );
-  const data = await res.json();
+  const data = res.data;
 
   const postsData = [];
 
@@ -55,11 +56,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params?.slug;
-  const res = await fetch(
-    `https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json/`
+  const slug = context.params?.slug; //am konkretul shemtxvevashi ar mchirdeba
+  const res = await axios.get(
+    "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
   );
-  const data = await res.json();
+  const data = res.data;
   const postsData = [];
 
   for (const key in data) {

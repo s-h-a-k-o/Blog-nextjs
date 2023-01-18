@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import YourComment from "../../components/comment/comment";
 import YourMessage from "../../components/comment/comment";
 import { FormModel } from "../../models/Posts";
+import axios from "axios";
 
 interface FormType {
   message: FormModel[];
@@ -16,16 +17,10 @@ const MessagesPage: NextPage<FormType> = ({ message }) => {
   }, [message]);
   const deleteComment = async (index: number) => {
     try {
-      await fetch(
-        `https://store-form-input-default-rtdb.firebaseio.com/formInput/${data[index]._id}.json`,
-        {
-          method: "DELETE",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
+      await axios.delete(
+        `https://store-form-input-default-rtdb.firebaseio.com/formInput/${data[index]._id}.json`
       );
+
       setData(data.filter((item, i) => i !== index));
     } catch (error) {
       console.log(error);
