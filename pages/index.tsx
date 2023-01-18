@@ -20,8 +20,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
     "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
   );
-  const data = await res.json();
-  const postsData = [];
+  const data = await res.json(); // firebase-dan migebuli data aris obieqti da ara array amitom =>
+  const postsData = []; // <==
 
   for (const key in data) {
     postsData.push({
