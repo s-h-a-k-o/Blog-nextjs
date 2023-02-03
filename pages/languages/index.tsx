@@ -21,24 +21,31 @@ const AllPostsPage: NextPage<allPostsType> = ({ allPosts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await axios.get(
-    "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
-  );
-  const data = await res.data;
-  const postsData = [];
+  try {
+    const res = await axios.get(
+      "https://nextjs-blog-97b75-default-rtdb.firebaseio.com/POSTS.json"
+    );
+    const data = await res.data;
+    const postsData = [];
 
-  for (const key in data) {
-    postsData.push({
-      slug: key,
-      ...data[key],
-    });
+    for (const key in data) {
+      postsData.push({
+        slug: key,
+        ...data[key],
+      });
+    }
+
+    return {
+      props: {
+        allPosts: postsData,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: { allPosts: [] },
+    };
   }
-
-  return {
-    props: {
-      allPosts: postsData,
-    },
-  };
 };
 
 export default AllPostsPage;

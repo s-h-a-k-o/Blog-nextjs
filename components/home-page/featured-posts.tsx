@@ -6,9 +6,11 @@ interface FeaturedPostsType {
   posts: PostsModel[];
 }
 
+
+
 const FeaturedPosts: FC<FeaturedPostsType> = ({ posts }) => {
   return (
-    <section className="w-full bg-slate-900 pb-10">
+    <section className="w-full bg-slate-900 pb-10 min-h-full">
       <h1 className="md:text-[50px] maxmd:text-[200%] p-8 text-gray-300 font-bold text-center overflow-hidden">
         Three Main Languages
       </h1>
